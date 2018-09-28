@@ -1,5 +1,4 @@
 <?php
-
 /*
  * ============================================================
  * @package php-binance-api
@@ -11,13 +10,8 @@
  * ============================================================
  * A curl HTTP REST wrapper for the binance currency exchange
  */
-namespace Binance;
 
-// PHP version check
-if (version_compare(phpversion(), '7.0', '<=')) {
-    fwrite(STDERR, "Hi, PHP " . phpversion() . " support will be removed very soon as part of continued development.\n");
-    fwrite(STDERR, "Please consider upgrading.\n");
-}
+namespace Webklex\Binance;
 
 /**
  * Main Binance class
@@ -26,8 +20,8 @@ if (version_compare(phpversion(), '7.0', '<=')) {
  * require 'vendor/autoload.php';
  * $api = new Binance\\API();
  */
-class API
-{
+class API {
+    
     protected $base = 'https://api.binance.com/api/'; // /< REST endpoint for the currency exchange
     protected $wapi = 'https://api.binance.com/wapi/'; // /< REST endpoint for the withdrawals
     protected $stream = 'wss://stream.binance.com:9443/ws/'; // /< Endpoint for establishing websocket connections
